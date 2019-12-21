@@ -1,7 +1,5 @@
 package sorting;
 
-import java.util.Random;
-
 public class Sorting {
 
 	public void bubbleSort( int[] arr)
@@ -83,12 +81,12 @@ public class Sorting {
 		
 		for( int i = 0 ; i < n1 ; i++)
 		{
-			L[i] = arr[l+i ] ;
+			L[i] = arr[l+i] ;
 		}
 		
 		for( int i = 0 ; i < n2 ; i++)
 		{
-			R[i] = arr[m+ i + 1] ;
+			R[i] = arr[m+i] ;
 		}
 		
 		int i =0 , j = 0 ;
@@ -122,54 +120,6 @@ public class Sorting {
 			arr[k] = R[j] ;
 			k++ ;
 			j++ ;
-		}
-	}
-	
-	public int getRandom(int low , int high )
-	{
-		Random rand = new Random();
-		int rnd = rand.nextInt(high-low) + low ;
-		return rnd ;
-	}
-	
-	public void swap( int[] arr, int i , int j )
-	{
-		int tmp = arr[i] ;
-		arr[i] = arr[j] ;
-		arr[j] = tmp ;
-	}
-	
-	public int partition(int[] arr, int low, int high)
-	{
-		int pivotIndex = getRandom(low, high) ;
-		
-		int pivot = arr[pivotIndex] ; 
-		
-		swap(arr , high , pivotIndex) ;
-		int smallIndex = low ;
-		
-		for( int i =  low ; i < high ; i++)
-		{
-			if( arr[i] < pivot)
-			{
-				swap( arr , smallIndex , i ) ;
-				smallIndex++;
-			}
-		}
-		
-		swap( arr , smallIndex , high ) ;
-		
-		return pivotIndex ;
-		
-	}
-	public void quickSort(int[] arr , int low , int high )
-	{
-		if( low < high )
-		{
-			int pivotIndex = partition( arr, low , high ) ;
-			
-			quickSort( arr , low , pivotIndex -1 ) ; // Before pivotIndex
-			quickSort( arr , pivotIndex + 1, high ) ; // After pivotIndex
 		}
 	}
 }

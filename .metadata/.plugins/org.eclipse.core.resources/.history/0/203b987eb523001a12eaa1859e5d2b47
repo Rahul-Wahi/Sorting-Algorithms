@@ -128,8 +128,7 @@ public class Sorting {
 	public int getRandom(int low , int high )
 	{
 		Random rand = new Random();
-		int rnd = rand.nextInt(high-low) + low ;
-		return rnd ;
+		
 	}
 	
 	public void swap( int[] arr, int i , int j )
@@ -139,37 +138,12 @@ public class Sorting {
 		arr[j] = tmp ;
 	}
 	
-	public int partition(int[] arr, int low, int high)
+	public void partition(int[] arr, int pivot)
 	{
-		int pivotIndex = getRandom(low, high) ;
-		
-		int pivot = arr[pivotIndex] ; 
-		
-		swap(arr , high , pivotIndex) ;
-		int smallIndex = low ;
-		
-		for( int i =  low ; i < high ; i++)
-		{
-			if( arr[i] < pivot)
-			{
-				swap( arr , smallIndex , i ) ;
-				smallIndex++;
-			}
-		}
-		
-		swap( arr , smallIndex , high ) ;
-		
-		return pivotIndex ;
 		
 	}
-	public void quickSort(int[] arr , int low , int high )
+	public void quickSort(int[] arr)
 	{
-		if( low < high )
-		{
-			int pivotIndex = partition( arr, low , high ) ;
-			
-			quickSort( arr , low , pivotIndex -1 ) ; // Before pivotIndex
-			quickSort( arr , pivotIndex + 1, high ) ; // After pivotIndex
-		}
+		
 	}
 }
