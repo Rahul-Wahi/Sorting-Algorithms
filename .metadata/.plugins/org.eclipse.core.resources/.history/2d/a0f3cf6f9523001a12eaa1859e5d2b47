@@ -19,7 +19,6 @@ public class Sorting {
 	      }
 	}
 	
-	//insertion sort
 	public void insertionSort(int[] arr) {
 		int n = arr.length;
 

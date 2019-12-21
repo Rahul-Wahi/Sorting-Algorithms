@@ -19,22 +19,21 @@ public class Sorting {
 	      }
 	}
 	
-	//insertion sort
-	public void insertionSort(int[] arr) {
-		int n = arr.length;
-
-		for (int i = 1; i < n; i++) {
-			for (int j = i - 1; j >= 0; j--) {
-				if (arr[j] > arr[j + 1]) {
-					int tmp = arr[j + 1];
-					arr[j + 1] = arr[j];
-					arr[j] = tmp;
-
-				} else {
-					break;
-				}
-			}
-		}
+	public void insertionSort( int[] arr)
+	{
+		int n = arr.length ;
+		for( int i = 1 ; i < n ; i++)
+	      {
+	          for(int j = 1 ; j < n - i + 1 ; j++ )
+	          {
+	              if(arr[j] < arr[j-1])
+	              {
+	                  int tmp = arr[j] ;
+	                  arr[j] = arr[j-1] ;
+	                  arr[j-1] = tmp ;
+	              }
+	          }
+	      }
 	}
 	
 	
